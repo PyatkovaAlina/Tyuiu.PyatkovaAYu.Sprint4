@@ -53,7 +53,7 @@ namespace Tyuiu.PyatkovaAYu.Sprint4.Task1.V5
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Сумма чётеных элементов массива: ");
+            Console.WriteLine("Сумма чётных элементов массива: ");
 
             int res = ds.Calculate(numsArray);
 
