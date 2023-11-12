@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Tyuiu.PyatkovaAYu.Sprint4.Task3.V28.Lib;
+
 namespace Tyuiu.PyatkovaAYu.Sprint4.Task3.V28
 {
     class Program
     {
         static void Main(string[] args)
         {
+            
+            
+            DataService ds = new DataService();
+            
             Console.Title = "Спринт #3|Выполнил: Пяткова А. Ю. | ИИПб - 23 - 2";
 
             Console.WriteLine("***************************************************************************");
@@ -26,28 +32,24 @@ namespace Tyuiu.PyatkovaAYu.Sprint4.Task3.V28
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Массив:                                                                    ");
             Console.WriteLine("{ 5, 4, 9, 8, 5 },\r\n{ 4, 6, 6, 9, 9 },\r\n{ 9, 8, 4, 8, 8 },\r\n{ 6, 8, 6, 8, 9 },\r\n{ 9, 4, 6, 6, 7 }");
 
-            int[,] arr = {
+            int[,] array = {
             {5,4,9,8,5 },
             {4,6,6,9,9 },
             {9,8,4,8,8 },
             {6,8,6,8,9 },
             {9,4,6,6,7 } };
-            int column = 3;
-            int min = arr[0, column];
-            for (int row = 0; row < arr.GetLength(0); row++)
-            {
-                int tpm = arr[row, column];
-                if (tpm < min)
-                {
-                    min = tpm;
-                }
-            }
+
+            Console.WriteLine();
+            Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Минимальный элемент в четвертом столбце массива: ");
-            Console.WriteLine($"{min}");
+
+            int res = ds.Calculate(array);
+
+            Console.WriteLine("Минимальный элемент в четвертом столбце массива: " + res);
             Console.ReadKey();
         }
     }

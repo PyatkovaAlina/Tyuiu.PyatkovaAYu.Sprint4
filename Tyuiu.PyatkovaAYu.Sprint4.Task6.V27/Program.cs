@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.PyatkovaAYu.Sprint4.Task0.V14.Lib;
+using Tyuiu.PyatkovaAYu.Sprint4.Task6.V27.Lib;
 
-namespace Tyuiu.PyatkovaAYu.Sprint4.Task0.V14
+namespace Tyuiu.PyatkovaAYu.Sprint4.Task6.V27
 {
     class Program
     {
@@ -18,34 +18,34 @@ namespace Tyuiu.PyatkovaAYu.Sprint4.Task0.V14
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
-            Console.WriteLine("* Задание #0                                                              *");
-            Console.WriteLine("* Вариант #14                                                             *");
+            Console.WriteLine("* Тема: Класс Array                                                       *");
+            Console.WriteLine("* Задание #6                                                              *");
+            Console.WriteLine("* Вариант #27                                                             *");
             Console.WriteLine("* Выполнил Пяткова А. Ю. | ИИПб-23-2                                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан одномерный целочисленный массив на 10 элементов,                    *");
-            Console.WriteLine("* заполненный статическими значениями в диапазоне от 0 до 9.              *");
-            Console.WriteLine("* Подсчитать сумму нечетных сумму нечетных элементов массива.             *");
+            Console.WriteLine("* Дан строковый массив данных.                                            *");
+            Console.WriteLine("* Используя класс Array, подсчитайте количество элементов,                *");
+            Console.WriteLine("* длина которых меньше 7                                                  *");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[] numsArray = { 8, 9, 5, 4, 3, 2, 1, 0, 5, 7 };
-
-            Console.WriteLine("Исходный массив: ");
-            for (int i = 0; i < numsArray.Length; i++)
+            var shapes = new string[] {"Квадрат", "Прямоугольник", "Круг", "Треугольник", "Пятиугольник", "Шестиугольник", "Восьмиугольник"};
+           
+            Console.WriteLine("Исходный массив:");
+            for (int i = 0; i < shapes.Length; i++)
             {
-                Console.WriteLine(numsArray[i]);
+                Console.WriteLine(shapes[i]);
             }
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Сумма нечётных элементов массива: ");
+            Console.WriteLine("Количество элементов, длина которых меньше 7: ");
 
-            int res = ds.GetSumOddArrEl(numsArray);
+            int nums = ds.Calculate(shapes);
 
-            Console.WriteLine(res);
+            Console.WriteLine(nums);
             Console.ReadKey();
         }
     }

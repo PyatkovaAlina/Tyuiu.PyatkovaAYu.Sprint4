@@ -4,48 +4,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.PyatkovaAYu.Sprint4.Task0.V14.Lib;
+using Tyuiu.PyatkovaAYu.Sprint4.Task7.V15.Lib;
 
-namespace Tyuiu.PyatkovaAYu.Sprint4.Task0.V14
+namespace Tyuiu.PyatkovaAYu.Sprint4.Task7.V15
 {
     class Program
     {
         static void Main(string[] args)
         {
+            int n = 4;
+            int m = 2;
+            int[,] mtrx = new int[n, m];
+
+            string str = "10293847";
+
             DataService ds = new DataService();
 
             Console.Title = "Спринт #4|Выполнил: Пяткова А. Ю. | ИИПб - 23 - 2";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
-            Console.WriteLine("* Задание #0                                                              *");
-            Console.WriteLine("* Вариант #14                                                             *");
+            Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                 *");
+            Console.WriteLine("* Задание #7                                                              *");
+            Console.WriteLine("* Вариант #15                                                             *");
             Console.WriteLine("* Выполнил Пяткова А. Ю. | ИИПб-23-2                                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан одномерный целочисленный массив на 10 элементов,                    *");
-            Console.WriteLine("* заполненный статическими значениями в диапазоне от 0 до 9.              *");
-            Console.WriteLine("* Подсчитать сумму нечетных сумму нечетных элементов массива.             *");
+            Console.WriteLine("* Дана строка из одноразрядных цифр '10293847'.                           *");
+            Console.WriteLine("* Преобразуйте ее в матрицу 4 на 2                                        *");
+            Console.WriteLine("* и подсчитайте количество нечетных чисел в матрице.                      *");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[] numsArray = { 8, 9, 5, 4, 3, 2, 1, 0, 5, 7 };
+            int index = 0;
 
-            Console.WriteLine("Исходный массив: ");
-            for (int i = 0; i < numsArray.Length; i++)
+            Console.WriteLine("\nМассив:");
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine(numsArray[i]);
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write($"{str[index]} \t");
+                    index++;
+                }
+                Console.WriteLine();
             }
+
+            Console.WriteLine();
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Сумма нечётных элементов массива: ");
 
-            int res = ds.GetSumOddArrEl(numsArray);
+            int res = ds.Calculate(n, m, str);
 
-            Console.WriteLine(res);
+            Console.WriteLine("Количество нечетных чисел в матрице: " + res);
             Console.ReadKey();
         }
     }
